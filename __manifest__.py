@@ -1,29 +1,28 @@
-# -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
-    'name': 'POS Pin Vandaag',
-    'author': "Pin Vandaag B.V.",
-    'website': 'https://www.pinvandaag.nl',
-    'version': '16.0.6',
-    'category': 'Sales/Point of Sale',
-    'sequence': 6,
-    'summary': 'Make payments happen with CCV/WorldLine terminals inside the POS Pinvandaag module',
-    'description': '',
-    'data': [
-        # 'views/pos_config_views.xml',
-        'views/pos_payment_method_views.xml',
-        'views/res_config_setting_views.xml',
+    "name": "POS Pin Vandaag",
+    "summary": "Make payments happen with CCV/WorldLine terminals inside the POS Pinvandaag module",
+    "website": "https://www.pinvandaag.nl",
+    "version": "17.0",
+    "category": "Sales/Point of Sale",
+    "description": "",
+    "sequence": 6,
+    "depends": ["base_setup", "point_of_sale"],
+    "data": [
+        "views/pos_payment_method_views.xml",
+        "views/res_config_settings_view.xml",
     ],
-    'depends': ['base_setup','point_of_sale'],
-    'installable': True,
-    'auto_install': False,
-    'images': [
-        'static/description/thumbnail.gif',
-    ],
-    'assets': {
-        'point_of_sale.assets': {
-            'pos_pinvandaag/static/**/*',
-        },
+    "assets": {
+        "point_of_sale._assets_pos": [
+            "pos_pinvandaag/static/**/*",
+        ],
     },
-    'license': 'LGPL-3',
+    "images": [
+        "static/description/thumbnail.gif",
+        "static/description/terminal_settings_thumbnail.png",
+        "static/description/terminal_settings_thumbnail.png",
+    ],
+    "license": "LGPL-3",
+    "installabe": True,
+    "application": True,
+    "auto_install": False,
 }
